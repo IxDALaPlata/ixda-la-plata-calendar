@@ -7,24 +7,11 @@ const CALENDAR_API = 'https://ux-calendar-api-pomdaybtgh.now.sh/'
 const GITHUB_IMAGES = 'https://user-images.githubusercontent.com/'
 
 module.exports = {
-    blog: {
-        listTemplate: 'src/blog.html',
-        srcRepo: 'git@github.com:meetupjs-ar/blog-articles.git',
-        postTemplate: 'src/posts/template.html',
-        tempDir: '.tmp/repo',
-        tempHTML: '.tmp/html/**/*.html',
-        tempHTMLArticles: '.tmp/articles/**/*.html',
-        tempHTMLArticlesDir: '.tmp/articles',
-        tempHTMLDir: '.tmp/html',
-        tempJSON: '.tmp/repo/**/*.json',
-        tempMd: '.tmp/repo/**/*.md'
-    },
     browserify: {
         isDebug: !util.env.production === false
     },
     clean: {
         assets: 'dist/assets/*',
-        blog: ['.tmp/*', 'dist/articulos/*', 'dist/blog.html'],
         browserConfig: 'dist/browserconfig.xml',
         cname: 'dist/CNAME',
         css: 'dist/css/*',
@@ -35,7 +22,6 @@ module.exports = {
     },
     dest: {
         assets: 'dist/assets',
-        blog: 'dist/articulos',
         browserConfig: 'dist/',
         cname: 'dist/',
         css: 'dist/css',
