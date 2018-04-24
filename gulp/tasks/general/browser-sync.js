@@ -6,7 +6,7 @@ module.exports = function(config) {
     return function() {
         server.init({
             open: false,
-            port: util.env.port,
+            port: process.env.PORT,
             reloadOnRestart: true,
             server: config.staticServer.dir,
             ui: false
