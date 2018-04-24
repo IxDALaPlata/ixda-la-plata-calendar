@@ -20,8 +20,7 @@ gulp.task('build', [
     'html-build',
     'css-build',
     'js-build',
-    'pwa-build',
-    'serve'
+    'pwa-build'
 ])
 
 gulp.task('assets-build', ['assets-clean', 'assets-copy'])
