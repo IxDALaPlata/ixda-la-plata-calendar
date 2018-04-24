@@ -6,8 +6,8 @@
         "build": "gulp build --production",
         "bump-minor": "gulp bump-minor",
         "deploy": "gh-pages -b master -d dist",
-        "start-dev": "gulp",
-        "start": "gulp --production",
+        "start-prod": "gulp --production",
+        "start": "gulp",
         "task": "gulp --"
     },
     "author": "durancristhian@gmail.com",
