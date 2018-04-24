@@ -94,7 +94,7 @@ module.exports = {
     },
     staticServer: {
         dir: './dist',
-        name: 'meetupjs-ar'
+        name: 'ixda-la-plata-calendar'
     },
     stylelint: {
         css: 'src/css/**/*.css'
