@@ -1,15 +1,14 @@
 {
-    "name": "Meetup.js",
-    "version": "2.35.0",
-    "short_name": "Meetup.js",
-    "description": "Meetup.js",
+    "name": "Calendario UX - IxD",
+    "version": "0.0.1",
+    "short_name": "Calendario UX - IxD",
+    "description": "Calendario UX - IxD",
     "start_url": "/?utm_source=homescreen",
     "display": "standalone",
     "orientation": "portrait",
     "background_color": "#fffceb",
     "theme_color": "#2e282a",
-    "icons": [
-        {
+    "icons": [{
             "src": "/assets/images/android-icon-512x512.png",
             "sizes": "512x512",
             "type": "image/png",

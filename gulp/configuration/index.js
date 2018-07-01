@@ -1,10 +1,6 @@
 const util = require('gulp-util')
 
-const ASSETS_BASE_URL = util.env.production
-    ? 'https://cdn.rawgit.com/meetupjs-ar/meetupjs-ar.github.io/master'
-    : ''
-const CALENDAR_API = 'https://ux-calendar-api-pomdaybtgh.now.sh/'
-const GITHUB_IMAGES = 'https://user-images.githubusercontent.com/'
+const CALENDAR_API = 'https://ux-google-spreadsheet-api-oyeaabfqck.now.sh'
 
 module.exports = {
     browserify: {
@@ -31,50 +27,11 @@ module.exports = {
         pkg: './'
     },
     envify: {
-        ASSETS_BASE_URL,
         CALENDAR_API
     },
     eslint: {
         files: 'src/js/**/*.js'
     },
-    isnardi: `    MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-    MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-    MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-    MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-    MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmdhhyyyhyhydmNMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-    MMMMMMMMMMMMMMMMMMMMMMMMMMNmddhhhhhhddhhhhhhyyyhdMMMMMMMMMMMMMMMMMMMMMMMMMM
-    MMMMMMMMMMMMMMMMMMMMMMMmhyhdddddmmmmmmmmdhdhhhhhhydMMMMMMMMMMMMMMMMMMMMMMMM
-    MMMMMMMMMMMMMMMMMMMMNdhhddmmdddddddhhhhhhhhhhhhhhhysNMMMMMMMMMMMMMMMMMMMMMM
-    MMMMMMMMMMMMMMMMMMNhhddmmmhyysooo++///:::///+oyhhhddydMMMMMMMMMMMMMMMMMMMMM
-    MMMMMMMMMMMMMMMMMmydmmNmhoo++++/////::---------:/+hmdhhNMMMMMMMMMMMMMMMMMMM
-    MMMMMMMMMMMMMMMMmhdmNNmy+///////////::-------...--:hmdhyMMMMMMMMMMMMMMMMMMM
-    MMMMMMMMMMMMMMMNodmmmmhs+///////////::::----......-/dmhhyMMMMMMMMMMMMMMMMMM
-    MMMMMMMMMMMMMMMyydmmmdhs+///////////::::::--.......-odhhsMMMMMMMMMMMMMMMMMM
-    MMMMMMMMMMMMMMMmsmmmmdhs////////////::::::--........+hhddyMMMMMMMMMMMMMMMMM
-    MMMMMMMMMMMMMMMMsdmmmds+///++++++++//:::::----......:yhmdoMMMMMMMMMMMMMMMMM
-    MMMMMMMMMMMMMMMMydmmmy+//+oossyyyyso++//++/+oo+/::-.-sdddsMMMMMMMMMMMMMMMMM
-    MMMMMMMMMMMMMMMMhodmmo//++osyhddhhyso+/:/oosyyso/:--./dhhdMMMMMMMMMMMMMMMMM
-    MMMMMMMMMMMMMMMM++ymh//++osssyhdyddyo+:--ohyddy/o+:-.-yh/oMMMMMMMMMMMMMMMMM
-    MMMMMMMMMMMMMMMM//+do///++++oosyyysso+/--:osso+:::--..+y::MMMMMMMMMMMMMMMMM
-    MMMMMMMMMMMMMMMM/osy///////+++ooooo+++/----:///:--....:o.:MMMMMMMMMMMMMMMMM
-    MMMMMMMMMMMMMMMM:oys+/////++++oooo++++/-.--:://:-.....-+-/MMMMMMMMMMMMMMMMM
-    MMMMMMMMMMMMMMMM+/+o+/////++oossys+o+++:::-+o+/:-.....-/-sMMMMMMMMMMMMMMMMM
-    MMMMMMMMMMMMMMMMmo+oo+///++oossssssysss//+::+so/:---..-:-NMMMMMMMMMMMMMMMMM
-    MMMMMMMMMMMMMMMMMMmoo++++++oossysssso+o+/:::/oso/:----::hMMMMMMMMMMMMMMMMMM
-    MMMMMMMMMMMMMMMMMMMyoo+o++++oyhyssssooo+////+sys+::-::/hMMMMMMMMMMMMMMMMMMM
-    MMMMMMMMMMMMMMMMMMMdooooo++oossssssso+++//:::/++///:::/MMMMMMMMMMMMMMMMMMMM
-    MMMMMMMMMMMMMMMMMMMN/sooooooooo++++osss+/:----///////+yMMMMMMMMMMMMMMMMMMMM
-    MMMMMMMMMMMMMMMMMMMMysssssoooo++++oo+++/:-----::/+++++NMMMMMMMMMMMMMMMMMMMM
-    MMMMMMMMMMMMMMMMMMMMMosyssssssoooooo+///-:-::://+++++hMMMMMMMMMMMMMMMMMMMMM
-    MMMMMMMMMMMMMMMMMMMMMhsssssyyyysysyssoso++//+o+++++//MMMMMMMMMMMMMMMMMMMMMM
-    MMMMMMMMMMMMMMMMMMMMMN/oosssssyhhhhhhhhhhysso++++//:sMMMMMMMMMMMMMMMMMMMMMM
-    MMMMMMMMMMMMMMMMMMMMMM/+oossssssyyyyyyyysoo++/////:-dMMMMMMMMMMMMMMMMMMMMMM
-    MMMMMMMMMMMMMMMMMMMNmds/++osossssyyyyyyysoo+///:::-./yhNMMMMMMMMMMMMMMMMMMM
-    MMMMMMMMMMMMMMMMMMmhNmo///++oooossyyyyyyso++/::---..//dhhdmMMMMMMMMMMMMMMMM
-    MMMMMMMMMMMMMMMNhddmms//////++++oossyyso++//::--.....+yddmdhhddddNMMMMMMMMM
-    MMMMMMMMMMMMNdddmNNmmy////////++++++++///::---.......odmmmdmmmmmmhyhhddmNNM
-    MMMMMMMNdddhmNNNNNNNNNh+////////+++++/::::----.....-smmmmmmmmmmmmmmmmmmddhh
-    MMMmddddNNNNNNNNNNNNNNNmho///////+++++/:---------:smmmmmmmmmmmmmmmmmmmmmmmm`,
     isProduction: util.env.production,
     htmlminOptions: {
         collapseWhitespace: true,
@@ -101,7 +58,7 @@ module.exports = {
     },
     sw: {
         file: 'dist/sw.js',
-        runtimeCaching: [CALENDAR_API, GITHUB_IMAGES]
+        runtimeCaching: [CALENDAR_API]
     },
     watch: {
         css: 'src/css/*.css',

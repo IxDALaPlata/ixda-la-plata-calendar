@@ -9,6 +9,7 @@ module.exports = function(config) {
             port: process.env.PORT,
             reloadOnRestart: true,
             server: config.staticServer.dir,
+            host: "localhost",
             ui: false
         })
     }

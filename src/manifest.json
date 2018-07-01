@@ -1,6 +1,6 @@
 {
     "name": "Calendario UX",
-    "version": "2.34.0",
+    "version": "0.0.1",
     "short_name": "Calendario UX",
     "description": "Calendario UX para las comodidades",
     "start_url": "/calendario.html",
@@ -8,8 +8,7 @@
     "orientation": "portrait",
     "background_color": "#fffceb",
     "theme_color": "#2e282a",
-    "icons": [
-        {
+    "icons": [{
             "src": "/assets/images/app-icon-512x512.png",
             "sizes": "512x512",
             "type": "image/png",

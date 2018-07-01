@@ -6,8 +6,8 @@ const injectSvg = require('gulp-inject-svg')
 const pkg = require('../../../package.json')
 const replace = require('gulp-replace')
 
-module.exports = function(config) {
-    return function() {
+module.exports = function (config) {
+    return function () {
         return gulp
             .src(config.src.html)
             .pipe(
@@ -16,8 +16,7 @@ module.exports = function(config) {
                     critical({
                         base: '/dist/',
                         css: ['dist/css/main.css'],
-                        dimensions: [
-                            {
+                        dimensions: [{
                                 height: 480,
                                 width: 320
                             },
@@ -36,8 +35,9 @@ module.exports = function(config) {
                 )
             )
             .pipe(replace('@version', pkg.version))
-            .pipe(replace('@isnardi', config.isnardi))
-            .pipe(injectSvg({ base: 'src/' }))
+            .pipe(injectSvg({
+                base: 'src/'
+            }))
             .pipe(gulpif(config.isProduction, htmlmin(config.htmlminOptions)))
             .pipe(gulp.dest(config.dest.html))
     }

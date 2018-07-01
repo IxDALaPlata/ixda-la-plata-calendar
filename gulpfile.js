@@ -32,49 +32,10 @@ gulp.task('bump-minor-manifest', getTask('bump/bump-minor-pkg'))
 gulp.task('bump-minor-pkg', getTask('bump/bump-minor-manifest'))
 
 gulp.task(
-    'browser-config-copy',
-    ['browser-config-clean'],
+    'browser-config-copy', ['browser-config-clean'],
     getTask('browser-config/browser-config-copy')
 )
 gulp.task('browser-config-clean', getTask('browser-config/browser-config-clean'))
-
-// gulp.task('blog-clean-repo', getTask('blog/blog-clean-repo'))
-// gulp.task('blog-clone-repo', ['blog-clean-repo'], getTask('blog/blog-clone-repo'))
-// gulp.task('blog-clone-tpl', ['blog-clean-repo', 'blog-clone-repo'], getTask('blog/blog-clone-tpl'))
-// gulp.task(
-//     'blog-replace-md',
-//     ['blog-clean-repo', 'blog-clone-repo', 'blog-clone-tpl'],
-//     getTask('blog/blog-replace-md')
-// )
-// gulp.task(
-//     'blog-replace-meta-tags',
-//     ['blog-clean-repo', 'blog-clone-repo', 'blog-clone-tpl', 'blog-replace-md'],
-//     getTask('blog/blog-replace-meta-tags')
-// )
-// gulp.task(
-//     'blog-build-list-tpls',
-//     ['blog-clean-repo', 'blog-clone-repo'],
-//     getTask('blog/blog-build-list-tpls')
-// )
-// gulp.task(
-//     'blog-build-list',
-//     ['blog-clean-repo', 'blog-clone-repo', 'blog-build-list-tpls'],
-//     getTask('blog/blog-build-list')
-// )
-// gulp.task(
-//     'blog-build',
-//     [
-//         'blog-clean-repo',
-//         'blog-clone-repo',
-//         'blog-clone-tpl',
-//         'blog-replace-md',
-//         'blog-replace-meta-tags',
-//         'blog-build-list-tpls',
-//         'blog-build-list'
-//     ],
-//     getTask('blog/blog-build')
-// )
-
 gulp.task('cname-copy', ['cname-clean'], getTask('cname/cname-copy'))
 gulp.task('cname-clean', getTask('cname/cname-clean'))
 
@@ -93,8 +54,7 @@ gulp.task('manifest-copy', ['manifest-clean'], getTask('manifest/manifest-copy')
 gulp.task('manifest-clean', getTask('manifest/manifest-clean'))
 
 gulp.task(
-    'pwa-clean',
-    ['js-build', 'css-build', 'html-build', 'assets-build'],
+    'pwa-clean', ['js-build', 'css-build', 'html-build', 'assets-build'],
     getTask('pwa/pwa-clean')
 )
 
